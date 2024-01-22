@@ -1,10 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
+import InputSample from './InputSample';
 
 function App() {
   return (
-    <div className="App">
-    </div>
+    <InputSample></InputSample>
   );
 }
 
