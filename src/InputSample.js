@@ -9,7 +9,6 @@ function InputSample(props) {
     });
     const nameInput = useRef();
 
-    
     const {name, nickname} = inputs;
 
     const onChange = (e) => {
