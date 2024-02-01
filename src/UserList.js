@@ -1,6 +1,6 @@
 import React,{useEffect} from 'react';
 
-function User({ user, onRemove, onToggle }) {
+const User = React.memo(function User({ user, onRemove, onToggle }) {
   useEffect((/* 첫번째 파라미터에는  함수를 등록하고*/)=>{
     /* deps에 아무것도 없다면 처음 마운트 될 때만 가능하다.
     간단하게 useEffect 사용 시 deps 배열에 어떤 것들 넣을지에 따라서 
@@ -31,7 +31,7 @@ function User({ user, onRemove, onToggle }) {
       <button onClick={() => onRemove(user.id)}>삭제</button>
     </div>
   );
-}
+});
 
 function UserList({ users, onRemove, onToggle }) {
   return (
@@ -48,4 +48,5 @@ function UserList({ users, onRemove, onToggle }) {
   );
 }
 
-export default UserList;
+export default React.memo(UserList,
+   (prevPros, nextProps) => nextProps.users === prevPros.users );
